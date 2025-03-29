@@ -38,15 +38,17 @@ List * createList() {
 }
 
 void * firstList(List * list) {
+    
     Node* primero = list -> head;
     list -> current = primero;
     return primero->data;
 }
 
 void * nextList(List * list) {
-    Node* sig = list -> current;
-    while(sig)
-    return NULL;
+    Node* sig = list->current->next;
+    if(sig == NULL) return NULL;
+    list->current = sig;
+    return sig->data;
 }
 
 void * lastList(List * list) {
