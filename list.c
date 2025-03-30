@@ -42,7 +42,10 @@ void * firstList(List * list) {
     return list->current->data;
 
 void * nextList(List * list) {
-    return NULL;
+    Node* sig = list->current->next;
+    if(sig == NULL) return NULL;
+    list->current = sig;
+    return sig->data;
 }
 
 void * lastList(List * list) {
