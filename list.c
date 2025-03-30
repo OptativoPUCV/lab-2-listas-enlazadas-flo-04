@@ -52,7 +52,7 @@ void * nextList(List * list) {
 
 void * lastList(List * list) {
     Node* ultimo = list-> head;
-    while(ultimo != NULL){
+    while(ultimo->next != NULL){
         ultimo = ultimo->next;
     }
     list->current = ultimo;
